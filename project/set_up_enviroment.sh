@@ -75,13 +75,13 @@ installPackagePip keras
 
 installPackagePip jupyter
 #######################################################################################
-echo "================= Starting install tenseflow for python ===================="
+echo "================= Starting install tensorflow for python ===================="
 sudo pip install --upgrade \ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl
 if [ $? == 0 ];
 	then
-	echo "Install tenseflow for python successful!"
+	echo "Install tensorflow for python successful!"
 else
-	echo "Install tenseflow for python fail!"
+	echo "Install tensorflow for python fail!"
 	exit 1
 fi
 #######################################################################################

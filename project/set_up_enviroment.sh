@@ -25,6 +25,7 @@ fi
 echo "============================= Starting install pip ========================="
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
+sudo pip install --upgrade pip
 if [ $? == 0 ];
 	then
 	echo "Install pip for python successful!"

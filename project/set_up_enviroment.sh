@@ -1,4 +1,5 @@
-installPackagePip(){
+#!/bin/bash
+install_package_pip(){
 	echo "======================== Starting install $1 via pip ========================="
 	sudo pip install $1
 	if [ $? == 0 ];
@@ -62,19 +63,19 @@ else
 	exit 1
 fi
 #######################################################################################
-installPackagePip numpy
+install_package_pip numpy
 
-installPackagePip scipy
+install_package_pip scipy
 
-installPackagePip matplotlib
+install_package_pip matplotlib
 
-installPackagePip pandas
+install_package_pip pandas
 
-installPackagePip scikit-learn
+install_package_pip scikit-learn
 
-installPackagePip keras
+install_package_pip keras
 
-installPackagePip jupyter
+install_package_pip jupyter
 #######################################################################################
 echo "================= Starting install tensorflow for python ===================="
 sudo pip install --upgrade \ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl

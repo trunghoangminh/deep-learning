@@ -22,6 +22,16 @@ else
 	exit 1
 fi
 #######################################################################################
+echo "================= Starting install python-pip and python-dev ===================="
+sudo apt-get install python-pip python-dev
+if [ $? == 0 ];
+	then
+	echo "Install python-pip and python-dev successful!"
+else
+	echo "Install python-pip and python-dev fail!"
+	exit 1
+fi
+#######################################################################################
 echo "============================= Starting install pip ========================="
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
@@ -39,16 +49,6 @@ else
 		then
 		rm get-pip.py
 	fi
-	exit 1
-fi
-#######################################################################################
-echo "================= Starting install python-pip and python-dev ===================="
-sudo apt-get install python-pip python-dev
-if [ $? == 0 ];
-	then
-	echo "Install python-pip and python-dev successful!"
-else
-	echo "Install python-pip and python-dev fail!"
 	exit 1
 fi
 #######################################################################################

@@ -1,4 +1,5 @@
-installPackagePip(){
+#!/bin/bash
+install_package_pip(){
 	echo "======================== Starting install $1 via pip ========================="
 	sudo pip install $1
 	if [ $? == 0 ];
@@ -22,6 +23,16 @@ else
 	exit 1
 fi
 #######################################################################################
+echo "================= Starting install python-pip and python-dev ===================="
+sudo apt-get install python-pip python-dev
+if [ $? == 0 ];
+	then
+	echo "Install python-pip and python-dev successful!"
+else
+	echo "Install python-pip and python-dev fail!"
+	exit 1
+fi
+#######################################################################################
 echo "============================= Starting install pip ========================="
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
@@ -42,16 +53,6 @@ else
 	exit 1
 fi
 #######################################################################################
-echo "================= Starting install python-pip and python-dev ===================="
-sudo apt-get install python-pip python-dev
-if [ $? == 0 ];
-	then
-	echo "Install python-pip and python-dev successful!"
-else
-	echo "Install python-pip and python-dev fail!"
-	exit 1
-fi
-#######################################################################################
 echo "============================= Starting update pip ========================="
 pip install -U pip
 if [ $? == 0 ];
@@ -62,19 +63,19 @@ else
 	exit 1
 fi
 #######################################################################################
-installPackagePip numpy
+install_package_pip numpy
 
-installPackagePip scipy
+install_package_pip scipy
 
-installPackagePip matplotlib
+install_package_pip matplotlib
 
-installPackagePip pandas
+install_package_pip pandas
 
-installPackagePip scikit-learn
+install_package_pip scikit-learn
 
-installPackagePip keras
+install_package_pip keras
 
-installPackagePip jupyter
+install_package_pip jupyter
 #######################################################################################
 echo "================= Starting install tensorflow for python ===================="
 sudo pip install --upgrade \ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl

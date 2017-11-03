@@ -2,7 +2,6 @@
 # Source code is refer from link: https://iamtrask.github.io/2015/07/12/basic-python-network/
 import numpy as np
 
-
 # sigmoid function
 def nonlin(x, deriv=False):
     if (deriv == True):
